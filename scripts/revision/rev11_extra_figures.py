@@ -220,6 +220,123 @@ def fig_alarm_budget():
     plt.close(fig)
 
 
+def fig_recall_ranking():
+    """Recall at the 2% operating point for every method of the main comparison,
+    the same numbers as the main table."""
+    from scripts.revision.rev12_make_tables import short
+    path = REV_TABLE_DIR / "rev07_metrics_with_ci.csv"
+    if not path.exists():
+        return
+    df = pd.read_csv(path).sort_values(["Recall@2%", "Model"], ascending=[True, False])
+    names = [short(m) for m in df["Model"]]
+    values = df["Recall@2%"].to_numpy()
+    colours = [BLUE if m == "AERIS" else "#B8B8B8" for m in df["Model"]]
+    fig, ax = plt.subplots(figsize=(5.0, 5.8))
+    y = np.arange(len(df))
+    ax.barh(y, values, color=colours, height=0.68, zorder=2)
+    aeris = float(df.loc[df["Model"] == "AERIS", "Recall@2%"].iloc[0])
+    ax.axvline(aeris, color=BLUE, lw=0.9, ls=":", zorder=1)
+    for yi, v, m in zip(y, values, df["Model"]):
+        ax.text(v + 0.8, yi, f"{v:.1f}", va="center", fontsize=8,
+                color=BLUE if m == "AERIS" else "#444444",
+                fontweight="bold" if m == "AERIS" else "normal")
+    ax.set_yticks(y)
+    ax.set_yticklabels(names, fontsize=8.5)
+    for label in ax.get_yticklabels():
+        if label.get_text() == "AERIS":
+            label.set_fontweight("bold")
+            label.set_color(BLUE)
+    ax.set_xlim(0, 80)
+    ax.set_ylim(-0.6, len(df) - 0.4)
+    ax.set_xlabel("Recall at the 2% alert budget (%)", fontsize=10)
+    style(ax)
+    ax.grid(axis="y", visible=False)
+    fig.tight_layout()
+    fig.savefig(REV_FIG_DIR / "figR20_recall_ranking.pdf", bbox_inches="tight")
+    plt.close(fig)
+
+
+REALTIME_SETTINGS = [("Canonical inputs (146 features)", "Canonical"),
+                     ("Training-only label normalisation and threshold", "Train-only\nlabel"),
+                     ("One-interval publication lag on all inputs", "One-interval\nlag"),
+                     ("Training-only label + publication lag", "Train-only\n+ lag")]
+
+
+def realtime_audit() -> pd.DataFrame | None:
+    """Test PR-AUC of each method in the four settings that move the protocol towards
+    real-time use, assembled from the same files as the audit table."""
+    r05 = REV_TABLE_DIR / "rev05_robustness.csv"
+    r32 = REV_TABLE_DIR / "rev32_audit_tuned_regressors.csv"
+    r32c = REV_TABLE_DIR / "rev32c_audit_tuned_classifier.csv"
+    if not (r05.exists() and r32.exists() and r32c.exists()):
+        return None
+    c = pd.read_csv(r05)
+    c = c[c["Part"] == "C_availability"]
+    reg, clf = pd.read_csv(r32), pd.read_csv(r32c)
+    rows = []
+    for setting, _ in REALTIME_SETTINGS:
+        block = c[c["Setting"] == setting].set_index("Model")["PR_AUC"]
+        r = reg[reg["Setting"] == setting].set_index("Model")["PR_AUC"]
+        rows.append({"Setting": setting,
+                     "AERIS": block["AERIS"],
+                     "LightGBM-R": r["LightGBM (regression, tuned)"],
+                     "HistGBM-R": r["HistGBM (regression, tuned)"],
+                     "HistGBM-C": clf.set_index("Setting").loc[setting, "PR_AUC"],
+                     "Persistence": block["Persistence heuristic"]})
+    return pd.DataFrame(rows).set_index("Setting")
+
+
+def fig_realtime():
+    """PR-AUC in the settings closest to real-time operation, and the share of the
+    canonical PR-AUC each method keeps there."""
+    df = realtime_audit()
+    if df is None:
+        return
+    series = [("AERIS", BLUE, "o", "-", 2.4), ("LightGBM-R", GREEN, "D", "-", 1.4),
+              ("HistGBM-R", ORANGE, "s", "-", 1.4), ("HistGBM-C", "#56B4E9", "v", "-", 1.4),
+              ("Persistence", GREY, "^", "--", 1.4)]
+    labels = [lab for _, lab in REALTIME_SETTINGS]
+    x = np.arange(len(labels))
+    fig, axes = plt.subplots(1, 2, figsize=(7.8, 3.5))
+
+    width = 0.16
+    for i, (name, colour, _, _, _) in enumerate(series):
+        offset = (i - (len(series) - 1) / 2) * width
+        axes[0].bar(x + offset, df[name].to_numpy(), width=width * 0.95, color=colour,
+                    label=name, zorder=2)
+        if name == "AERIS":
+            for xi, v in zip(x + offset, df[name]):
+                axes[0].text(xi, v + 0.012, f"{v:.3f}", ha="center", va="bottom",
+                             fontsize=7.5, color=BLUE, fontweight="bold", rotation=90)
+    axes[0].set_xticks(x)
+    axes[0].set_xticklabels(labels, fontsize=9)
+    axes[0].set_ylim(0, 0.78)
+    axes[0].set_ylabel("Test PR-AUC", fontsize=10)
+    axes[0].set_title("(a)", fontsize=10, loc="left")
+
+    retained = 100 * df / df.iloc[0]
+    for name, colour, marker, ls, lw in series:
+        axes[1].plot(x, retained[name].to_numpy(), color=colour, marker=marker, ms=6 if
+                     name == "AERIS" else 5, ls=ls, lw=lw, zorder=3 if name == "AERIS" else 2)
+    for xi, v in zip(x[2:], retained["AERIS"].to_numpy()[2:]):
+        axes[1].annotate(f"{v:.0f}%", (xi, v), textcoords="offset points", xytext=(0, 8),
+                         ha="center", fontsize=8.5, color=BLUE, fontweight="bold")
+    axes[1].set_xticks(x)
+    axes[1].set_xticklabels(labels, fontsize=9)
+    axes[1].set_ylim(40, 108)
+    axes[1].set_ylabel("PR-AUC retained (% of canonical)", fontsize=10)
+    axes[1].set_title("(b)", fontsize=10, loc="left")
+    for ax in axes:
+        style(ax)
+    axes[0].grid(axis="x", visible=False)
+    handles, names = axes[0].get_legend_handles_labels()
+    fig.legend(handles, names, fontsize=9, frameon=False, ncol=len(series),
+               loc="upper center", bbox_to_anchor=(0.5, 0.03))
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
+    fig.savefig(REV_FIG_DIR / "figR21_realtime.pdf", bbox_inches="tight")
+    plt.close(fig)
+
+
 def fig_seed_stability():
     path = REV_TABLE_DIR / "rev03_sequence_per_seed.csv"
     if not path.exists():
@@ -275,6 +392,8 @@ if __name__ == "__main__":
     fig_kde()
     fig_horizon()
     fig_alarm_budget()
+    fig_recall_ranking()
+    fig_realtime()
     fig_seed_stability()
     fig_perturbation()
     print("figures written to", REV_FIG_DIR)
