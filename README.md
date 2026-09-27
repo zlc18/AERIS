@@ -15,7 +15,7 @@ against tabular, sequence, anomaly-detection and persistence baselines.
 ## Contents
 
 ```
-scripts/revision/     the complete experiment pipeline (rev00 ... rev32c)
+scripts/revision/     the complete experiment pipeline (rev00 ... rev34)
   rev_common.py       data pipeline, event label, chronological split, score store
   rev_models.py       AERIS, its ablation variants and the sequence baselines
   rev_eval.py         metrics, moving-block bootstrap, alert budgets, costs
