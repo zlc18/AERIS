@@ -245,15 +245,20 @@ def table_main() -> None:
             text = fmt.format(r[col])
             return f"\\textbf{{{text}}}" if r[col] == best[col] else text
 
+        def ci(col: str, fmt: str) -> str:
+            return f"[{fmt.format(r[col + '_lo'])}, {fmt.format(r[col + '_hi'])}]"
+
         rows.append(
-            f"{name} & {cell('Precision@2%', '{:.1f}')} & {cell('Recall@2%', '{:.1f}')} & "
-            f"{cell('ROC_AUC', '{:.3f}')} & {cell('PR_AUC', '{:.3f}')} & "
-            f"[{r['PR_AUC_lo']:.2f}, {r['PR_AUC_hi']:.2f}] \\\\")
+            f"{name} & {cell('Precision@2%', '{:.1f}')} {ci('Precision@2%', '{:.1f}')} & "
+            f"{cell('Recall@2%', '{:.1f}')} {ci('Recall@2%', '{:.1f}')} & "
+            f"{cell('ROC_AUC', '{:.3f}')} & "
+            f"{cell('PR_AUC', '{:.3f}')} {ci('PR_AUC', '{:.2f}')} \\\\")
     body = wrap(
-        "One-step-ahead screening on the test partition; best value per column in bold",
-        "tab:main_comparison", "lccccc",
+        "One-step-ahead screening on the test partition with 95\\% block-bootstrap intervals; "
+        "best value per column in bold",
+        "tab:main_comparison", "lcccc",
         "\\textbf{Method} & \\textbf{P@2\\%} & \\textbf{R@2\\%} & \\textbf{ROC} & "
-        "\\textbf{PR-AUC} & \\textbf{95\\% CI}\\\\",
+        "\\textbf{PR-AUC}\\\\",
         rows, size="footnotesize")
     write("tab_main_comparison.tex", body)
 

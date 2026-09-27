@@ -36,5 +36,11 @@
     "Mean confidence | non-event": 0.5634510114299399,
     "Rank AUC (low density predicts event)": 0.9652802991302463,
     "Mann-Whitney p (two-sided)": 2.5492115638804622e-49
+  },
+  "alerts_2pct": {
+    "n_alerts": 132,
+    "max_confidence": 0.04903276063530532,
+    "median_confidence": 0.01733241009217986,
+    "spearman_confidence_vs_risk": -0.8245645617889498
   }
 }

@@ -188,7 +188,7 @@ def main() -> None:
 
     # ---- per-partition counts, on the frame the models actually see -------
     # The modelling frame drops rows with missing inputs (the week-ahead forecast
-    # is absent for the final three weeks) and one row for the regression target,
+    # is missing on 21 scattered days) and one row for the regression target,
     # so the partition boundaries differ from those of the raw record. Reporting
     # the raw record here would contradict every experiment.
     seq_len = 8

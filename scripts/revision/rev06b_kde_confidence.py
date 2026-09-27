@@ -147,6 +147,15 @@ def main() -> None:
         print(pd.DataFrame(sev_rows).to_string(index=False))
     else:
         print(f"\n  Q2 skipped: split gives {len(low)} / {len(high)} alerts")
+    # inside the alert list the confidence can only add information if it is not
+    # simply a restatement of the risk score
+    alerts = {
+        "n_alerts": int(len(alert_idx)),
+        "max_confidence": float(conf_alerts.max()),
+        "median_confidence": split,
+        "spearman_confidence_vs_risk": float(stats.spearmanr(conf_alerts, r_te[alert_idx])[0]),
+    }
+    print(f"  alerts: {alerts}")
 
     # ---- Q3 effect of the confidence-aware decision index ----------------
     sweep = []
@@ -180,6 +189,7 @@ def main() -> None:
         "paired_bootstrap_recall": diff_r,
         "paired_bootstrap_pr_auc": diff_p,
         "density_separation": q1,
+        "alerts_2pct": alerts,
     }
     (REV_TABLE_DIR / "rev06b_summary.json").write_text(
         json.dumps(summary, indent=2), encoding="utf-8")
