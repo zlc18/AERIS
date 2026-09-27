@@ -1,0 +1,108 @@
+{
+  "block_lengths": [
+    1,
+    32,
+    96,
+    192
+  ],
+  "rounds": 2000,
+  "significant_wins": {
+    "1": [
+      "AERIS (common recipe)",
+      "CART",
+      "GBM",
+      "GRU classifier",
+      "Heuristic: composite score persistence",
+      "Heuristic: renewable ramp",
+      "Heuristic: |system imbalance|",
+      "Isolation Forest",
+      "KDE (input space)",
+      "LSTM classifier",
+      "LightGBM",
+      "Logistic Regression",
+      "One-Class SVM",
+      "RF",
+      "TCN classifier",
+      "Transformer classifier",
+      "VAE reconstruction (unsupervised)",
+      "XGBoost",
+      "XGBoost (regression, tuned)",
+      "XGBoost (tuned)"
+    ],
+    "32": [
+      "AERIS (common recipe)",
+      "CART",
+      "GBM",
+      "GRU classifier",
+      "Heuristic: composite score persistence",
+      "Heuristic: renewable ramp",
+      "Heuristic: |system imbalance|",
+      "HistGBM",
+      "Isolation Forest",
+      "KDE (input space)",
+      "LightGBM",
+      "Logistic Regression",
+      "One-Class SVM",
+      "RF",
+      "TCN classifier",
+      "VAE reconstruction (unsupervised)",
+      "XGBoost",
+      "XGBoost (tuned)"
+    ],
+    "96": [
+      "AERIS (common recipe)",
+      "CART",
+      "GBM",
+      "GRU classifier",
+      "Heuristic: composite score persistence",
+      "Heuristic: renewable ramp",
+      "Heuristic: |system imbalance|",
+      "HistGBM",
+      "Isolation Forest",
+      "KDE (input space)",
+      "LightGBM",
+      "Logistic Regression",
+      "One-Class SVM",
+      "RF",
+      "TCN classifier",
+      "VAE reconstruction (unsupervised)",
+      "XGBoost",
+      "XGBoost (tuned)"
+    ],
+    "192": [
+      "AERIS (common recipe)",
+      "CART",
+      "GBM",
+      "GRU classifier",
+      "Heuristic: composite score persistence",
+      "Heuristic: renewable ramp",
+      "Heuristic: |system imbalance|",
+      "HistGBM",
+      "Isolation Forest",
+      "KDE (input space)",
+      "LightGBM",
+      "Logistic Regression",
+      "One-Class SVM",
+      "RF",
+      "TCN classifier",
+      "VAE reconstruction (unsupervised)",
+      "XGBoost",
+      "XGBoost (tuned)"
+    ]
+  },
+  "counts": {
+    "1": 20,
+    "32": 18,
+    "96": 18,
+    "192": 18
+  },
+  "stable_over_32_96_192": true,
+  "iid_extra_wins": [
+    "LSTM classifier",
+    "Transformer classifier",
+    "XGBoost (regression, tuned)"
+  ],
+  "iid_missing_wins": [
+    "HistGBM"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "selected": {
+    "components": 2,
+    "bandwidth": 1.5,
+    "alpha": 0.3
+  },
+  "validation_pr_auc": 0.6486479190547826,
+  "test_pr_auc_alpha0": 0.6263529149494801,
+  "test_pr_auc_alpha_star": 0.616409638384245,
+  "test_recall2_alpha0": 69.41176470588235,
+  "test_recall2_alpha_star": 68.23529411764706,
+  "paired_bootstrap_recall": {
+    "observed_diff": -1.17647058823529,
+    "mean_diff": -0.2151304576990052,
+    "ci_lower": -3.5714285714285694,
+    "ci_upper": 2.702702702702709,
+    "p_one_sided": 0.7626186906546727,
+    "p_two_sided": 0.4747626186906546,
+    "n_bootstrap": 2000,
+    "block_length": 96
+  },
+  "paired_bootstrap_pr_auc": {
+    "observed_diff": -0.009943276565235082,
+    "mean_diff": -0.009789793930608354,
+    "ci_lower": -0.022571536281122857,
+    "ci_upper": 0.003565612951766401,
+    "p_one_sided": 0.9165417291354323,
+    "p_two_sided": 0.1669165417291354,
+    "n_bootstrap": 2000,
+    "block_length": 96
+  },
+  "density_separation": {
+    "Median confidence | event": 0.02064309516596702,
+    "Median confidence | non-event": 0.6116761154628467,
+    "Mean confidence | event": 0.04858318971332854,
+    "Mean confidence | non-event": 0.5634510114299399,
+    "Rank AUC (low density predicts event)": 0.9652802991302463,
+    "Mann-Whitney p (two-sided)": 2.5492115638804622e-49
+  }
+}

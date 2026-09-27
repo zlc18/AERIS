@@ -1,0 +1,8 @@
+﻿Indicator,Median | low-density alerts,Median | high-density alerts,Ratio,Mann-Whitney p (two-sided)
+imbalanceprice_abs,64.3415,,,
+price_spread,52.772999999999996,,,
+alpha,1.615,,,
+ace_abs,23.864,,,
+systemimbalance_abs,193.0365,,,
+future_event_proxy_score,2.011824521260112,,,
+Realised event rate among alerts,0.44696969696969696,,,

@@ -1,0 +1,7 @@
+{
+  "lag1_autocorrelation_of_score": 0.887950045365018,
+  "lag4_autocorrelation_of_score": 0.6759788603673542,
+  "P(event at t+1 | event at t)": 0.5394321766561514,
+  "P(event at t+1 | no event at t)": 0.008487138497311437,
+  "base_rate": 0.018093607305936073
+}

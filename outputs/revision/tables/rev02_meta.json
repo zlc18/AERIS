@@ -1,0 +1,6 @@
+{
+  "n_features": 146,
+  "seq_len": 8,
+  "test_positives": 85,
+  "test_size": 6598
+}

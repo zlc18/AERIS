@@ -1,0 +1,16 @@
+﻿Definition,Max relative deviation,Verified
+wind_mostrecent_error = wind_measured - wind_mostrecentforecast,4.001243780749064e-13,True
+wind_recent_bandwidth = c90 - c10,1.6251692218836662e-15,True
+wind_ramp_abs = |diff(wind_measured)|,7.639999743958015e-13,True
+wind_recent_error_ratio = |error| / capacity,4.996977831517313e-11,True
+renewable_measured_total = wind + solar,5.574341546235098e-16,True
+renewable_recent_error_abs = |e_wind| + |e_solar|,2.2196006935174307e-16,True
+renewable_ramp_ratio = (ramp_wind + ramp_solar) / capacity_total,4.999681224582275e-12,True
+renewable_uncertainty_total = bw_wind + bw_solar,2.219080253030125e-16,True
+intermittency_index = ramp_ratio_w + ramp_ratio_s + err_ratio_w + err_ratio_s,1.199999544176933e-10,True
+imbalance_stress_index = |SI| x renewable_recent_error_ratio,8.959684636615471e-10,True
+price_spread = |MIP - MDP|,2.0469737016526324e-14,True
+wind_solar_ratio = wind / (solar + 1e-6),4.955333946659158e-10,True
+systemimbalance_mean_1h = rolling mean over 4 intervals,1.1466444401971895e-10,True
+systemimbalance_std_1d = rolling std over 96 intervals,4.981929993247096e-10,True
+extreme_imbalance_flag = 1[|SI| >= Q95(|SI|)] (excluded from inputs),0.0,True

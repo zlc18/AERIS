@@ -1,0 +1,47 @@
+{
+  "deployed": "input-selected ensemble (rev16/rev17)",
+  "architecture": {
+    "encoder": "tcn",
+    "pooling": "attention",
+    "gate": true,
+    "bottleneck": "vae",
+    "summary_branch": false,
+    "head_skip": false
+  },
+  "hyper_parameters": {
+    "seq_len": 4,
+    "hidden_dim": 128,
+    "latent_dim": 16,
+    "attention_heads": 8,
+    "dropout": 0.05,
+    "lr": 0.001,
+    "max_epochs": 12,
+    "batch_size": 128,
+    "ranking_weight": 0.0,
+    "recon_weight": 0.15,
+    "kl_weight": 0.003,
+    "aux_weight": 3.0,
+    "aux_loss": "huber",
+    "input_clip": 5.0,
+    "score_mode": "aux",
+    "head_skip": false,
+    "n_inputs": 32
+  },
+  "sequence_inputs": 32,
+  "seeds_ensembled": 3,
+  "validation_pr_auc": 0.6477434334022751,
+  "n_parameters": 662210,
+  "inference_ms_per_sample": 0.0957810709583858,
+  "test": {
+    "PR_AUC": 0.6263529149494801,
+    "ROC_AUC": 0.9518898853875958,
+    "Precision@1": 66.66666666666666,
+    "Recall@1": 51.76470588235295,
+    "Precision@2": 44.696969696969695,
+    "Recall@2": 69.41176470588235
+  },
+  "candidates_validation_pr_auc": {
+    "input-selected ensemble (rev16/rev17)": 0.6477434334022751,
+    "greedy architecture search (rev23)": 0.6476256353257315
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "selected_bandwidth": 0.2,
+  "alpha_selected_on_validation": 0.0,
+  "test_recall_at_2pct_alpha0": 69.41176470588235,
+  "test_recall_at_2pct_alpha_star": 69.41176470588235,
+  "test_precision_at_2pct_alpha0": 44.696969696969695,
+  "test_precision_at_2pct_alpha_star": 44.696969696969695,
+  "block_bootstrap_recall_diff": {
+    "observed_diff": 0.0,
+    "mean_diff": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0,
+    "p_one_sided": 1.0,
+    "p_two_sided": 0.0,
+    "n_bootstrap": 2000,
+    "block_length": 96
+  },
+  "block_bootstrap_precision_diff": {
+    "observed_diff": 0.0,
+    "mean_diff": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0,
+    "p_one_sided": 1.0,
+    "p_two_sided": 0.0,
+    "n_bootstrap": 2000,
+    "block_length": 96
+  },
+  "density_separation": {
+    "Median density confidence | event": 0.0,
+    "Median density confidence | non-event": 0.0,
+    "Mean density confidence | event": 0.009391602748339566,
+    "Mean density confidence | non-event": 0.14960214428711546,
+    "Rank AUC (low density predicts event)": 0.599360554908283,
+    "Mann-Whitney p (two-sided)": 8.960145503071972e-06
+  }
+}

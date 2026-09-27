@@ -1,0 +1,22 @@
+﻿Setting,Model,PR_AUC,Recall@2%,Positives,AERIS,AERIS lead (%)
+Canonical inputs (146 features),"HistGBM (regression, tuned)",0.6050135787580476,63.52941393852234,85,0.6188646677019957,2.289384805607357
+Canonical inputs (146 features),"XGBoost (regression, tuned)",0.5644525783447509,64.70588445663452,85,0.6188646677019957,9.639798176989006
+Canonical inputs (146 features),"LightGBM (regression, tuned)",0.627769398437727,67.05882549285889,85,0.6188646677019957,-1.4184716167898261
+Composite score and z-scores removed (141),"HistGBM (regression, tuned)",0.6306735056929402,70.58823704719543,85,0.5971180526160812,-5.320574397681512
+Composite score and z-scores removed (141),"XGBoost (regression, tuned)",0.5818959592752531,68.23529601097107,85,0.5971180526160812,2.615947593069238
+Composite score and z-scores removed (141),"LightGBM (regression, tuned)",0.6245345377273962,69.41176652908325,85,0.5971180526160812,-4.3899069555192565
+"Composite score, z-scores and raw constituents removed (137)","HistGBM (regression, tuned)",0.6277321318819385,67.05882549285889,85,0.6225395988634745,-0.8271892985463104
+"Composite score, z-scores and raw constituents removed (137)","XGBoost (regression, tuned)",0.544616153372867,62.352943420410156,85,0.6225395988634745,14.30795708280396
+"Composite score, z-scores and raw constituents removed (137)","LightGBM (regression, tuned)",0.6521400206036501,67.05882549285889,85,0.6225395988634745,-4.538967216392584
+One-interval publication lag on all inputs,"HistGBM (regression, tuned)",0.3029044581732323,44.70588266849518,85,0.4354365824983369,43.753771444759956
+One-interval publication lag on all inputs,"XGBoost (regression, tuned)",0.3434532859300329,51.76470875740051,85,0.4354365824983369,26.781894463237872
+One-interval publication lag on all inputs,"LightGBM (regression, tuned)",0.4111531177718847,56.47059082984924,85,0.4354365824983369,5.906185232900295
+Training-only label normalisation and threshold,"HistGBM (regression, tuned)",0.5889780509770177,61.64383292198181,73,0.6027368985191806,2.336054377466048
+Training-only label normalisation and threshold,"XGBoost (regression, tuned)",0.5335393671995124,68.49315166473389,73,0.6027368985191806,12.969526819150776
+Training-only label normalisation and threshold,"LightGBM (regression, tuned)",0.5946611623354184,68.49315166473389,73,0.6027368985191806,1.3580399554001814
+Training-only label + publication lag,"HistGBM (regression, tuned)",0.3287413555989143,49.31506812572479,73,0.4256185123363984,29.469111533287123
+Training-only label + publication lag,"XGBoost (regression, tuned)",0.32452828353752605,49.31506812572479,73,0.4256185123363984,31.149897844630555
+Training-only label + publication lag,"LightGBM (regression, tuned)",0.3720418233041434,53.4246563911438,73,0.4256185123363984,14.400716714167952
+Equal weights in the composite score,"HistGBM (regression, tuned)",0.6025506643363651,67.07317233085632,82,0.6021771304285133,-0.06199211617552136
+Equal weights in the composite score,"XGBoost (regression, tuned)",0.5966106069351637,68.29268336296082,82,0.6021771304285133,0.9330245605161639
+Equal weights in the composite score,"LightGBM (regression, tuned)",0.6276407081139991,68.29268336296082,82,0.6021771304285133,-4.057030934465904

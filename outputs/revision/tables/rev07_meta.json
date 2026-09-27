@@ -1,0 +1,7 @@
+{
+  "test_size": 6598,
+  "test_positives": 85,
+  "prevalence_pct": 1.2882691724765079,
+  "block_length_intervals": 96,
+  "bootstrap_rounds": 2000
+}

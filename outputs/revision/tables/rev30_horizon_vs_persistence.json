@@ -1,0 +1,135 @@
+{
+  "t+1": {
+    "minutes": 15,
+    "AERIS": 0.6294931961319147,
+    "HistGBM": 0.6357823873125796,
+    "Persistence": 0.5474214774378773,
+    "strongest_alternative": "HistGBM",
+    "vs_persistence": {
+      "observed_diff": 0.0820717186940374,
+      "mean_diff": 0.08250479068883199,
+      "ci_lower": 0.02594113928467714,
+      "ci_upper": 0.1593766929835463,
+      "p_one_sided": 0.0034982508745627187,
+      "p_two_sided": 0.0069965017491254375,
+      "n_bootstrap": 2000.0,
+      "block_length": 96.0
+    },
+    "relative_vs_persistence_pct": 14.992418470346024,
+    "relative_vs_best_alt_pct": -0.9892050025558354
+  },
+  "t+2": {
+    "minutes": 30,
+    "AERIS": 0.4467041856817971,
+    "HistGBM": 0.3901567121710745,
+    "Persistence": 0.3561360324160626,
+    "strongest_alternative": "HistGBM",
+    "vs_persistence": {
+      "observed_diff": 0.09056815326573447,
+      "mean_diff": 0.08901583312770454,
+      "ci_lower": 0.026292715311139043,
+      "ci_upper": 0.14638852842904662,
+      "p_one_sided": 0.0069965017491254375,
+      "p_two_sided": 0.013993003498250875,
+      "n_bootstrap": 2000.0,
+      "block_length": 96.0
+    },
+    "relative_vs_persistence_pct": 25.430775047195034,
+    "relative_vs_best_alt_pct": 14.493528304577227
+  },
+  "t+3": {
+    "minutes": 45,
+    "AERIS": 0.299381203200292,
+    "HistGBM": 0.27024347440190954,
+    "Persistence": 0.26869411112755504,
+    "strongest_alternative": "HistGBM",
+    "vs_persistence": {
+      "observed_diff": 0.030687092072736954,
+      "mean_diff": 0.028181252883573173,
+      "ci_lower": -0.025771101574351,
+      "ci_upper": 0.07250625142145317,
+      "p_one_sided": 0.1359320339830085,
+      "p_two_sided": 0.271864067966017,
+      "n_bootstrap": 2000.0,
+      "block_length": 96.0
+    },
+    "relative_vs_persistence_pct": 11.42082792360459,
+    "relative_vs_best_alt_pct": 10.782028636535529
+  },
+  "t+4": {
+    "minutes": 60,
+    "AERIS": 0.23902124530121763,
+    "HistGBM": 0.19368748090598217,
+    "Persistence": 0.23171178223123265,
+    "strongest_alternative": "Persistence",
+    "vs_persistence": {
+      "observed_diff": 0.007309463069984978,
+      "mean_diff": 0.007262170317108693,
+      "ci_lower": -0.07512458009560823,
+      "ci_upper": 0.07558181098584184,
+      "p_one_sided": 0.3798100949525237,
+      "p_two_sided": 0.7596201899050474,
+      "n_bootstrap": 2000.0,
+      "block_length": 96.0
+    },
+    "relative_vs_persistence_pct": 3.1545495872500044,
+    "relative_vs_best_alt_pct": 3.1545495872500044
+  },
+  "t+5": {
+    "minutes": 75,
+    "AERIS": 0.1261871394576566,
+    "HistGBM": 0.11214870818880864,
+    "Persistence": 0.17814127578226902,
+    "strongest_alternative": "Persistence",
+    "vs_persistence": {
+      "observed_diff": -0.051954136324612404,
+      "mean_diff": -0.05541039181795793,
+      "ci_lower": -0.13012205577274588,
+      "ci_upper": 0.008308168676493968,
+      "p_one_sided": 0.953023488255872,
+      "p_two_sided": 0.09395302348825596,
+      "n_bootstrap": 2000.0,
+      "block_length": 96.0
+    },
+    "relative_vs_persistence_pct": -29.16456957909783,
+    "relative_vs_best_alt_pct": -29.16456957909783
+  },
+  "t+6": {
+    "minutes": 90,
+    "AERIS": 0.12417035579059507,
+    "HistGBM": 0.09115001825363866,
+    "Persistence": 0.1449125377560391,
+    "strongest_alternative": "Persistence",
+    "vs_persistence": {
+      "observed_diff": -0.02074218196544403,
+      "mean_diff": -0.015694841292263364,
+      "ci_lower": -0.055319239450278355,
+      "ci_upper": 0.02517100647676172,
+      "p_one_sided": 0.7901049475262368,
+      "p_two_sided": 0.41979010494752633,
+      "n_bootstrap": 2000.0,
+      "block_length": 96.0
+    },
+    "relative_vs_persistence_pct": -14.313586861865318,
+    "relative_vs_best_alt_pct": -14.313586861865318
+  },
+  "t+8": {
+    "minutes": 120,
+    "AERIS": 0.09120290150794173,
+    "HistGBM": 0.08683029412962898,
+    "Persistence": 0.14633541591207885,
+    "strongest_alternative": "Persistence",
+    "vs_persistence": {
+      "observed_diff": -0.05513251440413712,
+      "mean_diff": -0.05462776803698644,
+      "ci_lower": -0.11263103412903788,
+      "ci_upper": -0.005604507386473134,
+      "p_one_sided": 0.984007996001999,
+      "p_two_sided": 0.031984007996002095,
+      "n_bootstrap": 2000.0,
+      "block_length": 96.0
+    },
+    "relative_vs_persistence_pct": -37.675441765417744,
+    "relative_vs_best_alt_pct": -37.675441765417744
+  }
+}

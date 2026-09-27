@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+# raw Elia exports and the derived feature table are not redistributed
+dataset/*.json
+outputs/processed/
+outputs/revision/latex/

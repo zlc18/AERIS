@@ -1,0 +1,37 @@
+{
+  "n_rows": 35040,
+  "start": "2024-12-31 23:00:00",
+  "end": "2025-12-31 22:45:00",
+  "resolution_minutes": 15,
+  "weights": {
+    "intermittency_index": 0.35,
+    "renewable_ramp_ratio": 0.3,
+    "renewable_recent_error_ratio": 0.2,
+    "systemimbalance_abs": 0.15
+  },
+  "train_rows": 24528,
+  "valid_rows": 3504,
+  "test_rows": 7008,
+  "train_period": [
+    "2024-12-31 23:00:00",
+    "2025-09-13 10:45:00"
+  ],
+  "valid_period": [
+    "2025-09-13 11:00:00",
+    "2025-10-19 22:45:00"
+  ],
+  "test_period": [
+    "2025-10-19 23:00:00",
+    "2025-12-31 22:45:00"
+  ],
+  "label_variant_agreement": {
+    "overall_agreement_pct": 99.80878449727446,
+    "jaccard_pct": 90.44222539229672,
+    "test_agreement_pct": 99.82874268588554,
+    "test_jaccard_pct": 85.88235294117646
+  },
+  "equal_weight_label_agreement_pct": 99.48343274636832,
+  "equal_weight_jaccard_pct": 75.03448275862068,
+  "modelling_frame_rows": 33021,
+  "raw_record_rows": 35040
+}

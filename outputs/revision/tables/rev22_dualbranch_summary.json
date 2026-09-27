@@ -1,0 +1,48 @@
+{
+  "selected_config": {
+    "hidden_dim": 192,
+    "latent_dim": 8,
+    "attention_heads": 8,
+    "dropout": 0.2,
+    "lr": 0.001,
+    "max_epochs": 12,
+    "batch_size": 128,
+    "ranking_weight": 0.1,
+    "recon_weight": 0.05,
+    "kl_weight": 0.01,
+    "aux_weight": 0.3,
+    "aux_loss": "mse",
+    "input_clip": 5.0,
+    "score_mode": "aux",
+    "seq_len": 8,
+    "summary_branch": true,
+    "head_skip": false,
+    "deployment": "single"
+  },
+  "search_validation_pr_auc": 0.5981894283295598,
+  "inference_ms_per_sample": 0.3715034993471515,
+  "n_parameters": 1723364,
+  "test_deployed": {
+    "PR_AUC": 0.5898462481986328,
+    "ROC_AUC": 0.9588027564779943,
+    "F1": 55.55555555555556,
+    "Precision@1%": 63.63636255264282,
+    "Recall@1%": 49.41176474094391,
+    "Precision@2%": 42.424243688583374,
+    "Recall@2%": 65.8823549747467
+  },
+  "test_per_seed": {
+    "PR_AUC": [
+      0.5862511946367702,
+      0.004898637971477921
+    ],
+    "Recall@2%": [
+      63.52941393852234,
+      2.3529410362243652
+    ],
+    "Precision@2%": [
+      40.90909163157145,
+      1.5151515603067933
+    ]
+  }
+}

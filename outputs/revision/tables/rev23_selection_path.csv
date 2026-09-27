@@ -1,0 +1,7 @@
+﻿Step,bottleneck,pooling,encoder,use_gate,summary_branch,Valid PR_AUC
+start,vae,attention,tcn,True,True,0.6351860673289498
+bottleneck=ae,ae,attention,tcn,True,True,0.6186638562829684
+pooling=mean,vae,mean,tcn,True,True,0.6269750155013478
+encoder=causal_tcn,vae,attention,causal_tcn,True,True,0.6106103180243426
+use_gate=False,vae,attention,tcn,False,True,0.6349261648086106
+summary_branch=False,vae,attention,tcn,True,False,0.6373952553468435

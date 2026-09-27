@@ -1,0 +1,5 @@
+﻿Component,Weight,Correlation with composite score,Share of score variance (%)
+intermittency_index,0.35,0.9456453068440205,42.23671667465909
+renewable_ramp_ratio,0.3,0.7501674918455015,27.41761415220446
+renewable_recent_error_ratio,0.2,0.8603624914194862,21.793772464556955
+systemimbalance_abs,0.15,0.460117997027008,8.554750671306667

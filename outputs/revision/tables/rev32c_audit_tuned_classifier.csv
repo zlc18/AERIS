@@ -1,0 +1,8 @@
+﻿Setting,Model,PR_AUC
+Canonical inputs (146 features),HistGBM (tuned),0.5896764677748083
+Composite score and z-scores removed (141),HistGBM (tuned),0.5847413731341762
+"Composite score, z-scores and raw constituents removed (137)",HistGBM (tuned),0.5341653170120705
+One-interval publication lag on all inputs,HistGBM (tuned),0.32473042738882735
+Training-only label normalisation and threshold,HistGBM (tuned),0.5910380312973281
+Training-only label + publication lag,HistGBM (tuned),0.2706426716357824
+Equal weights in the composite score,HistGBM (tuned),0.5693990803968156

@@ -1,0 +1,58 @@
+{
+  "architecture": {
+    "bottleneck": "vae",
+    "pooling": "attention",
+    "encoder": "tcn",
+    "use_gate": true,
+    "summary_branch": false
+  },
+  "hyper_parameters": {
+    "seq_len": 4,
+    "hidden_dim": 128,
+    "latent_dim": 16,
+    "attention_heads": 8,
+    "dropout": 0.05,
+    "lr": 0.001,
+    "max_epochs": 12,
+    "batch_size": 128,
+    "ranking_weight": 0.0,
+    "recon_weight": 0.15,
+    "kl_weight": 0.003,
+    "aux_weight": 3.0,
+    "aux_loss": "huber",
+    "input_clip": 5.0,
+    "score_mode": "aux",
+    "head_skip": false,
+    "n_inputs": 32
+  },
+  "sequence_inputs": 32,
+  "summary_columns": 0,
+  "validation_pr_auc": 0.6373952553468435,
+  "final_validation_pr_auc": 0.6476256353257315,
+  "deployment": "ensemble",
+  "n_parameters": 662210,
+  "inference_ms_per_sample": 0.116895800781928,
+  "test_deployed": {
+    "PR_AUC": 0.6263528189361939,
+    "ROC_AUC": 0.9518871758744955,
+    "F1": 48.275862068965516,
+    "Precision@1%": 66.66666865348816,
+    "Recall@1%": 51.76470875740051,
+    "Precision@2%": 44.69696879386902,
+    "Recall@2%": 69.41176652908325
+  },
+  "test_per_seed_mean_std": {
+    "PR_AUC": [
+      0.6125225613344606,
+      0.018786201620911522
+    ],
+    "Recall@2%": [
+      67.84313917160034,
+      0.6792355703257271
+    ],
+    "Precision@2%": [
+      43.6868687470754,
+      0.4373861504435625
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "selected_config": {
+    "seq_len": 4,
+    "hidden_dim": 128,
+    "latent_dim": 16,
+    "attention_heads": 8,
+    "dropout": 0.05,
+    "lr": 0.001,
+    "max_epochs": 12,
+    "batch_size": 128,
+    "ranking_weight": 0.0,
+    "recon_weight": 0.15,
+    "kl_weight": 0.003,
+    "aux_weight": 3.0,
+    "aux_loss": "huber",
+    "input_clip": 5.0,
+    "score_mode": "aux",
+    "head_skip": false,
+    "n_inputs": 32
+  },
+  "search_validation_pr_auc": 0.6159782642480863,
+  "search_trials": 14,
+  "inference_ms_per_sample": 0.08850719401228464,
+  "n_parameters": 662210,
+  "seeds": [
+    42,
+    7,
+    13
+  ],
+  "test": {
+    "PR_AUC": [
+      0.6125225613344606,
+      0.018786201620911522
+    ],
+    "ROC_AUC": [
+      0.9513829053807918,
+      0.002548179763850068
+    ],
+    "F1": [
+      53.30308366611997,
+      2.506769674806217
+    ],
+    "Precision@1%": [
+      64.14141456286113,
+      5.736272408094862
+    ],
+    "Recall@1%": [
+      49.80392356713613,
+      4.454047201496484
+    ],
+    "Precision@2%": [
+      43.6868687470754,
+      0.4373861504435625
+    ],
+    "Recall@2%": [
+      67.84313917160034,
+      0.6792355703257271
+    ],
+    "Accuracy": [
+      98.51975346064465,
+      0.24641302209270438
+    ]
+  },
+  "selected_inputs": [
+    "event_proxy_score",
+    "intermittency_index",
+    "minute",
+    "solar_mostrecent_error_std_1h",
+    "wind_ramp_abs",
+    "renewable_recent_error_abs",
+    "wind_ramp_ratio",
+    "renewable_uncertainty_total",
+    "renewable_recent_error_ratio",
+    "renewable_ramp_ratio_std_1h",
+    "wind_mostrecent_error_std_1h",
+    "solar_ramp_ratio",
+    "solar_recent_error_ratio",
+    "quarter_sin",
+    "solar_ramp_abs",
+    "solar_loadfactor_weighted",
+    "wind_recent_bandwidth",
+    "ace",
+    "renewable_recent_error_ratio_std_1h",
+    "wind_measured_std_1h",
+    "wind_recent_error_ratio",
+    "marginaldecrementalprice",
+    "systemimbalance_abs",
+    "renewable_ramp_abs",
+    "renewable_measured_total",
+    "imbalanceprice",
+    "wind_dayahead_error_ratio",
+    "renewable_measured_total_mean_4h",
+    "wind_mostrecent_error",
+    "systemimbalance",
+    "solar_mostrecentconfidence10",
+    "renewable_ramp_ratio_std_4h"
+  ]
+}

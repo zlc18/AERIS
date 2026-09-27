@@ -1,0 +1,5 @@
+﻿,intermittency_index,renewable_ramp_ratio,renewable_recent_error_ratio,systemimbalance_abs
+intermittency_index,1.0,0.6307,0.9258,0.2363
+renewable_ramp_ratio,0.6307,1.0,0.4409,0.1499
+renewable_recent_error_ratio,0.9258,0.4409,1.0,0.2319
+systemimbalance_abs,0.2363,0.1499,0.2319,1.0
