@@ -23,7 +23,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.revision.rev_common import REV_FIG_DIR, REV_TABLE_DIR  # noqa: E402
 
 NAVY, TEAL, GREY, LIGHT, ORANGE = "#1F4E79", "#2A7F8E", "#6B6B6B", "#EEF2F6", "#D55E00"
-plt.rcParams.update({"font.family": "DejaVu Sans", "mathtext.fontset": "dejavusans"})
+plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman"],
+                     "mathtext.fontset": "stix", "pdf.fonttype": 42, "ps.fonttype": 42})
 
 
 def box(ax, x, y, w, h, title, body="", face=LIGHT, edge=NAVY, title_color=NAVY,

@@ -21,6 +21,9 @@ from scripts.revision.rev_common import REV_FIG_DIR, REV_TABLE_DIR  # noqa: E402
 
 BLUE, ORANGE, GREY = "#1F4E79", "#D55E00", "#8C8C8C"
 GREEN = "#009E73"
+# Times New Roman throughout, matching the manuscript; TrueType embedding in the PDFs
+plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman"],
+                     "mathtext.fontset": "stix", "pdf.fonttype": 42, "ps.fonttype": 42})
 
 
 def style(ax):

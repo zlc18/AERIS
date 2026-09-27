@@ -21,7 +21,7 @@ scripts/revision/     the complete experiment pipeline (rev00 ... rev34)
   rev_eval.py         metrics, moving-block bootstrap, alert budgets, costs
 outputs/revision/
   tables/             every result table (CSV / JSON) reported in the article
-  figures/            the article figures
+  figures/            the result figures of the article
   scores/             validation and test scores of every model, the deployed
                       AERIS checkpoint (AERIS_deployed.pt) and its latent states
 dataset/              place the raw Elia files here (see dataset/README.md)
